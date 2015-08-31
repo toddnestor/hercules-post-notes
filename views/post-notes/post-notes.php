@@ -27,4 +27,16 @@ class HercView_PostNotes extends HercView
 
         parent::__construct();
     }
+
+    function PostsColumns()
+    {
+        return array(
+            'notes' => 'Notes'
+        );
+    }
+
+    function NotesFilter( $data )
+    {
+        return $this->Helper('string')->LimitText( $data, 25 );
+    }
 }
